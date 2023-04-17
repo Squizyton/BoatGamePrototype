@@ -1,41 +1,39 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DefaultNamespace
+public class GameManager : MonoBehaviour
 {
-    public class GameManager : MonoBehaviour
+    public static GameManager instance;
+    public GameObject uiCanvas;
+    public List<GameObject> environment;
+    public BoxCollider wayPointBounds;
+
+    public Transform debugSphere;
+    private void Awake()
     {
-        public static GameManager instance;
-        public GameObject uiCanvas;
-        public List<GameObject> environment;
+        instance = this;
+    }
 
-        private void Awake()
+    public bool CheckForEnironmentCollision(Vector3 position)
+    {
+        foreach (var piece in environment)
         {
-            instance = this;
-        }
-
-        public bool CheckForEnironmentCollision(Vector3 position)
-        {
-            foreach (var piece in environment)
-            {
                 
-                piece.TryGetComponent(out Collider envCol);
+            piece.TryGetComponent(out Collider envCol);
 
-                if (!envCol) return false;
+            if (!envCol) return false;
                 
-                if (envCol.bounds.Contains(position))
-                    return true;
-            }
-
-            return false;
+            if (envCol.bounds.Contains(position))
+                return true;
         }
 
+        return false;
+    }
 
 
-        public void CanvasActive(bool value)
-        {
-            uiCanvas.SetActive(value);
-        }
+
+    public void CanvasActive(bool value)
+    {
+        uiCanvas.SetActive(value);
     }
 }
