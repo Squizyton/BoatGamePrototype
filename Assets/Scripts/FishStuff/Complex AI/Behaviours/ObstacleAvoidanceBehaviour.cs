@@ -10,6 +10,8 @@ namespace FishStuff.Complex_AI.Behaviours
       
         public override (float[] danger, float[] interest) GetSteering(float[] danger, float[] interest, AIData aiData)
         {
+            if (aiData.obstacles == null) return (danger,interest);
+            
             foreach (var obstacleCollider in aiData.obstacles)
             {
                 var directionToObstacle = Vector3.zero;

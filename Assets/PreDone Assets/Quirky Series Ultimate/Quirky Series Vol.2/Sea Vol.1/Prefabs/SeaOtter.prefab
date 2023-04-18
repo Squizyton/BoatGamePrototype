@@ -554,6 +554,7 @@ GameObject:
   - component: {fileID: 6058617893201776294}
   - component: {fileID: 6058617893201776293}
   - component: {fileID: 2766156114541761228}
+  - component: {fileID: 8646773670250161185}
   m_Layer: 0
   m_Name: SeaOtter
   m_TagString: Untagged
@@ -667,8 +668,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec90b0db6f40fcd459d678726bd57155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishInfo: {fileID: 0}
+  ai: {fileID: 0}
+  detectionDelay: 0.05
   fishSpeed: 3
-  boundingBox: {fileID: 0}
+--- !u!114 &8646773670250161185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6058617893201776291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1e5605f7de59a43aea437f99224cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclesLayerMask:
+    serializedVersion: 2
+    m_Bits: 216
+  obstacles: []
+  targets: []
+  currentTarget: {x: 0, y: 0, z: 0}
+  thisCollider: {fileID: 0}
+  sightRadius: 0
+  colliderRadius: 0
+  targetReachThreshold: 0
 --- !u!1 &6058617893545676753
 GameObject:
   m_ObjectHideFlags: 0

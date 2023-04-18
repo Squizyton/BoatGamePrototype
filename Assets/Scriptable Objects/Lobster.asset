@@ -15,3 +15,7 @@ MonoBehaviour:
   prefab: {fileID: 8047628689421722102, guid: 20b27f90667930e41858e44166544d32, type: 3}
   weight: 0
   coolDown: 0.6
+  fishSpeed: 1
+  sightRadius: 2
+  colliderRadius: 0
+  targetReachedThreshold: 0.5

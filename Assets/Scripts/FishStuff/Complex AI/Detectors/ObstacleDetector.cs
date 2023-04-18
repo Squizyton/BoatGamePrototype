@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 namespace FishStuff.Complex_AI.Detectors
@@ -14,7 +15,7 @@ namespace FishStuff.Complex_AI.Detectors
         public override void Detect(AIData aiData)
         {
             //TODO:: Change to NonAlloc
-            colliders = Physics.OverlapSphere(_transform.position, detectionRadius, _layerMask);
+            colliders = Physics.OverlapSphere(_transform.position, aiData.sightRadius, _layerMask);
             aiData.obstacles = colliders;
         }
     }

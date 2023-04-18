@@ -636,6 +636,7 @@ GameObject:
   - component: {fileID: 5282283659001997922}
   - component: {fileID: 5282283659001997923}
   - component: {fileID: 7029311254600284276}
+  - component: {fileID: 8005711434970896795}
   m_Layer: 0
   m_Name: Orca
   m_TagString: Untagged
@@ -749,5 +750,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec90b0db6f40fcd459d678726bd57155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishInfo: {fileID: 11400000, guid: 1765ecfbf18cc334c946161a1b63c32e, type: 2}
+  ai: {fileID: 8005711434970896795}
+  detectionDelay: 0.05
   fishSpeed: 3
-  boundingBox: {fileID: 0}
+--- !u!114 &8005711434970896795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5282283659001997933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1e5605f7de59a43aea437f99224cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclesLayerMask:
+    serializedVersion: 2
+    m_Bits: 216
+  obstacles: []
+  targets: []
+  currentTarget: {x: 0, y: 0, z: 0}
+  thisCollider: {fileID: 0}
+  sightRadius: 2
+  colliderRadius: 0.3569666
+  targetReachThreshold: 0.5

@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
             if (envCol.bounds.Contains(position))
                 return true;
         }
-
         return false;
     }
 

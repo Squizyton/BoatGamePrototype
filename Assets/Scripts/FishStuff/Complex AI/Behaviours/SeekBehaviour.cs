@@ -24,7 +24,7 @@ namespace FishStuff.Complex_AI.Behaviours
             //Cache the last position only if we still see the target (if the targets collection is not empty)
             if (aiData.currentTarget != null)
             {
-                targetPositionCached = aiData.currentTarget.position;
+                targetPositionCached = aiData.currentTarget;
             }
             
             //First check if we have reached the target
@@ -40,9 +40,7 @@ namespace FishStuff.Complex_AI.Behaviours
             
             //if we haven't yet reeach the target do the main logic of finding the interest directions
             var directionToTarget = (targetPositionCached - _transform.position);
-Debug.Log($"{targetPositionCached}");
-            
-Debug.Log(interest.Length);
+
             for (var i = 0; i < interest.Length; i++)
             {
                 var result = Vector3.Dot(directionToTarget.normalized, Directions.EighteenDirections[i]);

@@ -397,6 +397,7 @@ GameObject:
   - component: {fileID: 7038114840533862828}
   - component: {fileID: 7038114840533862829}
   - component: {fileID: 5072896962094386807}
+  - component: {fileID: 7769747075872447779}
   m_Layer: 0
   m_Name: Squid
   m_TagString: Untagged
@@ -510,8 +511,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec90b0db6f40fcd459d678726bd57155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishInfo: {fileID: 11400000, guid: 190353c939954b74396d821a1f30bb35, type: 2}
+  ai: {fileID: 7769747075872447779}
+  detectionDelay: 0.05
   fishSpeed: 3
-  boundingBox: {fileID: 0}
+--- !u!114 &7769747075872447779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7038114840533862827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1e5605f7de59a43aea437f99224cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclesLayerMask:
+    serializedVersion: 2
+    m_Bits: 216
+  obstacles: []
+  targets: []
+  currentTarget: {x: 0, y: 0, z: 0}
+  thisCollider: {fileID: 0}
+  sightRadius: 2
+  colliderRadius: 0.2033422
+  targetReachThreshold: 0.5
 --- !u!1 &7540773388475008065
 GameObject:
   m_ObjectHideFlags: 0

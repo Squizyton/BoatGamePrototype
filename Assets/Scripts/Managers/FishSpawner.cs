@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using FishStuff.Complex_AI;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -41,7 +42,13 @@ public class FishSpawner : MonoBehaviour
 
          var y = Random.Range(-16, water.position.y);
 
-         Instantiate(fish.prefab, new Vector3(xPos, y, zPos), Quaternion.identity);
+         var spawnedFish = Instantiate(fish.prefab, new Vector3(xPos, y, zPos), Quaternion.identity);
+         
+         //TODO:Remove this when you fix the null bug
+         spawnedFish.TryGetComponent(out AIData aiData);
+         aiData.waypointColliderBox = GameManager.instance.wayPointBounds;
+         
+         
          StartCoroutine(Cooldown(fish.coolDown));
          currentFish++;
       }

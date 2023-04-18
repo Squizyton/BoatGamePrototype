@@ -38,10 +38,9 @@ public class FishAI : MonoBehaviour
     {
         detectors = new List<Detector>();
         steeringBehaviours = new List<SteeringBehaviour>();
-
         currentState = new WanderState();
         currentState.OnInitialized(this, ai);
-
+      
         InvokeRepeating(nameof(PerformDetection), 0, detectionDelay);
     }
 
@@ -96,8 +95,10 @@ public class FishAI : MonoBehaviour
     {
         ai.sightRadius = fishInfo.sightRadius;
         //Get the width of the collider bounds
-        var width = transform.GetComponent<CapsuleCollider>().bounds.size.x;
-        ai.colliderRadius = width / 2;
+        var width = transform.GetComponent<CapsuleCollider>().radius;
+        Debug.Log( transform.GetComponent<CapsuleCollider>());
+        Debug.Log(width);
+        ai.colliderRadius = width;
         ai.targetReachThreshold = fishInfo.targetReachedThreshold;
     }
 
