@@ -10,6 +10,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+
 [RequireComponent((typeof(AIData)))]
 public class FishAI : MonoBehaviour
 {
@@ -98,13 +99,14 @@ public class FishAI : MonoBehaviour
         var width = transform.GetComponent<CapsuleCollider>().radius;
         Debug.Log( transform.GetComponent<CapsuleCollider>());
         Debug.Log(width);
-        ai.colliderRadius = width;
+        ai.colliderRadius = width * 2f;
         ai.targetReachThreshold = fishInfo.targetReachedThreshold;
     }
 
     private void OnDrawGizmos()
     {
-       
+        for(int i = 5; i < Directions.EighteenDirections.Count; i++)
+         Debug.DrawRay(transform.position,transform.TransformDirection(Directions.EighteenDirections[i]),Color.green);
     }
 
     #endregion

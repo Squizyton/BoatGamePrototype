@@ -22,16 +22,12 @@ namespace FishStuff.Complex_AI.Behaviours
             //else set a new Target
             
             //Cache the last position only if we still see the target (if the targets collection is not empty)
-            if (aiData.currentTarget != null)
-            {
-                targetPositionCached = aiData.currentTarget;
-            }
-            
+            targetPositionCached = aiData.currentTarget;
+
             //First check if we have reached the target
             if (Vector3.Distance(_transform.position, targetPositionCached) < targetReachedThreshold)
             {
-                
-             
+
                 //TODO: Not really a todo, however uncomment if needed in future
                 aiData.GenerateNewTarget();
                 return (danger, interest);

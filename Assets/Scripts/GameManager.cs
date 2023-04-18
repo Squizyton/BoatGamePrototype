@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public NavMeshSurface surface;
     public Transform water;
     public LayerMask environmentMask;
+    public TerrainCollider terrainCollider;
     private void Awake()
     {
         instance = this;
@@ -39,14 +40,17 @@ public class GameManager : MonoBehaviour
 
 
     public void CanvasActive(bool value)
+    
     {
         uiCanvas.SetActive(value);
     }
 
-    public bool RandomPoint(Vector3 center, float range, out Vector3 result) {
+    public bool RandomPoint(Vector3 center, float range, out Vector3 result)
+    {
+        NavMeshHit hit;
+        
         for (int i = 0; i < 30; i++) {
             var randomPoint = center + Random.insideUnitSphere * range;
-            NavMeshHit hit;
             if (!NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas) && hit.position.y > 0) continue;
             //shoot up a raycast from the hit position to make sure we don't collide  with any environment;
 

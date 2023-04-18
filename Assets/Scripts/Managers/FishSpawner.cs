@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using FishStuff.Complex_AI;
+using Sirenix.OdinInspector;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -20,8 +21,12 @@ public class FishSpawner : MonoBehaviour
 
    private const int MAX_FISH = 50;
    private int currentFish;
+
+
+   [Title("Debug")] [SerializeField] private bool turboSpawn;
    private void Start()
    {
+      
       SpawnAFish();
       
    }
@@ -61,7 +66,7 @@ public class FishSpawner : MonoBehaviour
 
    IEnumerator Cooldown(float time)
    {
-      yield return new WaitForSeconds(time);
+      yield return new WaitForSeconds(turboSpawn ? 0 : time );
       SpawnAFish();
    }
 

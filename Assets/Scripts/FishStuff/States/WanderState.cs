@@ -56,9 +56,16 @@ namespace FishStuff.States
             position +=( _transform.forward +
                          contextSolver.GetDirectionMove(fish.GetSteeringBehaviours(), aiData)) * (Time.deltaTime * fish.fishInfo.fishSpeed);
 
-            //Clamp the y so the fish can't go above the water
+            
+            
+            //Clamp the y so the fish can't go above the water and can't go under terrain
             var pos = position;
-            pos.y = Mathf.Clamp(position.y, -16f, 0);
+
+            Physics.Raycast(_transform.position, _transform.TransformDirection(Vector3.down),out var hit ,Mathf.Infinity, 6);
+            
+            Debug.Log(hit);
+            
+            pos.y = Mathf.Clamp(position.y, hit.point.normalized.y, 0);
 
             position = pos;
             _transform.position = position;

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace FishStuff.Complex_AI.Behaviours
 {
@@ -14,14 +15,19 @@ namespace FishStuff.Complex_AI.Behaviours
             
             foreach (var obstacleCollider in aiData.obstacles)
             {
-                var directionToObstacle = Vector3.zero;
+                Vector3 directionToObstacle;
                 //Get the direction to the obstacle based on how close it is to the agent on the closest point
                 if (obstacleCollider is TerrainCollider)
                 {
-                    directionToObstacle =
-                        obstacleCollider.GetComponent<TerrainCollider>().ClosestPoint(_transform.position) -
-                        _transform.position;
-                }else directionToObstacle= obstacleCollider.ClosestPoint(_transform.position) - _transform.position;
+                    var position = _transform.position;
+                    NavMesh.SamplePosition(position, out var hit, 1f,NavMesh.AllAreas);
+                    directionToObstacle = hit.position - position;
+
+                }else
+                {
+                    var position = _transform.position;
+                    directionToObstacle= obstacleCollider.ClosestPoint(position) - position;
+                }
 
                 var distanceToObstacle = directionToObstacle.magnitude;
                 
@@ -53,6 +59,11 @@ namespace FishStuff.Complex_AI.Behaviours
     {
         public static readonly List<Vector3> EighteenDirections = new()
         {
+            Vector3.up,
+            Vector3.up + Vector3.forward,
+            Vector3.up + Vector3.right,
+            Vector3.up + Vector3.back,
+            Vector3.up + Vector3.left, 
             Vector3.forward,
             Vector3.forward + Vector3.right,
             Vector3.right,
@@ -61,12 +72,7 @@ namespace FishStuff.Complex_AI.Behaviours
             Vector3.back + Vector3.left,
             Vector3.left,
             Vector3.left + Vector3.forward,
-            Vector3.up,
             Vector3.down,
-            Vector3.up + Vector3.forward,
-            Vector3.up + Vector3.right,
-            Vector3.up + Vector3.back,
-            Vector3.up + Vector3.left,
             Vector3.down + Vector3.forward,
             Vector3.down + Vector3.right,
             Vector3.down + Vector3.back,
