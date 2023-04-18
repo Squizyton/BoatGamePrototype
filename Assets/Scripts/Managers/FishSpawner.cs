@@ -40,7 +40,7 @@ public class FishSpawner : MonoBehaviour
       if (!Physics.Raycast(new Vector3(xPos,transform.position.y,zPos), Vector3.down, out RaycastHit hit, rayLength,enviroMask))
       {
 
-         var y = Random.Range(-16, water.position.y);
+         var y = Random.Range(-5, water.position.y);
 
          var spawnedFish = Instantiate(fish.prefab, new Vector3(xPos, y, zPos), Quaternion.identity);
          

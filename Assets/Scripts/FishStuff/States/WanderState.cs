@@ -51,16 +51,17 @@ namespace FishStuff.States
                     _transform.forward + contextSolver.GetDirectionMove(fish.GetSteeringBehaviours(), aiData)),
                 (Time.deltaTime * 5f));
 
-            
-            
-            _transform.position +=( _transform.forward +
-                contextSolver.GetDirectionMove(fish.GetSteeringBehaviours(), aiData)) * (Time.deltaTime * fish.fishInfo.fishSpeed);
+
+            var position = _transform.position;
+            position +=( _transform.forward +
+                         contextSolver.GetDirectionMove(fish.GetSteeringBehaviours(), aiData)) * (Time.deltaTime * fish.fishInfo.fishSpeed);
 
             //Clamp the y so the fish can't go above the water
-            var pos = _transform.position;
-            pos.y = Mathf.Clamp(_transform.position.y, -16f, 0);
+            var pos = position;
+            pos.y = Mathf.Clamp(position.y, -16f, 0);
 
-            _transform.position = pos;
+            position = pos;
+            _transform.position = position;
         }
 
 

@@ -500,8 +500,9 @@ MonoBehaviour:
   obstacles: []
   targets: []
   currentTarget: {x: 0, y: 0, z: 0}
+  waypointColliderBox: {fileID: 0}
   thisCollider: {fileID: 0}
-  sightRadius: 0.45
+  sightRadius: 1
   colliderRadius: 0.5
   targetReachThreshold: 0.5
 --- !u!1 &7738370524391381279

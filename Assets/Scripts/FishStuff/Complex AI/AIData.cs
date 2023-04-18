@@ -43,7 +43,6 @@ namespace FishStuff.Complex_AI
 
         private void Start()
         {
-            Debug.Log($"Hello? : {GameManager.instance.wayPointBounds}");
             waypointColliderBox = GameManager.instance.wayPointBounds;
             thisCollider = GetComponent<CapsuleCollider>();
         }
@@ -56,19 +55,13 @@ namespace FishStuff.Complex_AI
 
         public void GenerateNewTarget()
         {
-          //Generate a new Point in the bounding
-          Vector3 extents = waypointColliderBox.size / 2f;
-          Vector3 point = new Vector3(
-              Random.Range(-extents.x, extents.x),
-              Random.Range(-extents.y, extents.y),
-              Random.Range(-extents.z, extents.z)
-          ) + waypointColliderBox.center;
-
-          if (!GameManager.instance.CheckForEnironmentCollision(point))
-          {
-              FeedTarget(point);
-          }else GenerateNewTarget();
+          
+            if(GameManager.instance.RandomPoint(transform.position,20, out var newPoint))
+            {
+                currentTarget = newPoint;
+            }
         }
+        
 
 
         private void OnDrawGizmos()

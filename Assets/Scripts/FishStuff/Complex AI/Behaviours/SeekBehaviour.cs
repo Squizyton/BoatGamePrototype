@@ -31,7 +31,7 @@ namespace FishStuff.Complex_AI.Behaviours
             if (Vector3.Distance(_transform.position, targetPositionCached) < targetReachedThreshold)
             {
                 
-                Debug.Log("Reached Target");
+             
                 //TODO: Not really a todo, however uncomment if needed in future
                 aiData.GenerateNewTarget();
                 return (danger, interest);
