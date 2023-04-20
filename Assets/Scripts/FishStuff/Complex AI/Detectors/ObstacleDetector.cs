@@ -8,7 +8,6 @@ namespace FishStuff.Complex_AI.Detectors
         private Transform transform;
         
         //The range in which the AI can detect things
-        [SerializeField] private float detectionRadius = 8.24f;
 
         private Collider[] colliders;
 

@@ -19,7 +19,7 @@ public class FishSpawner : MonoBehaviour
    [SerializeField] private Transform water;
    [SerializeField] private LayerMask enviroMask;
 
-   private const int MAX_FISH = 50;
+   private const int MAX_FISH = 100;
    private int currentFish;
 
 

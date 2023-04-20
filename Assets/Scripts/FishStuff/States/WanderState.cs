@@ -17,7 +17,8 @@ namespace FishStuff.States
 
         private Collider[] hitColliders;
         private Collider[] cachedColliders;
-
+        
+        private LayerMask ground = LayerMask.NameToLayer("Terrain");
 
         public override void OnInitialized(FishAI passedFish, AIData passedData)
         {
@@ -39,7 +40,18 @@ namespace FishStuff.States
         public override void Update()
         {
             CheckDistanceFromCachedColliders();
-            cachedColliders = new Collider[10];
+           // cachedColliders = new Collider[10];
+           
+           //TODO:Fix this. Idk why it doesn't work
+            //if(Physics.Raycast(_transform.position, _transform.TransformDirection(Vector3.down),out hit ,Mathf.Infinity, ground));
+            //{
+              // Debug.Log(hit.collider);
+              // Debug.Log(hit.point);
+              // Debug.Log(hit.point.y);
+                var pos = _transform.position;
+                pos.y = Mathf.Clamp(pos.y, -10, 0);
+                _transform.position = pos;
+            //}
         }
 
         public override void FixedUpdate()
@@ -56,19 +68,10 @@ namespace FishStuff.States
             position +=( _transform.forward +
                          contextSolver.GetDirectionMove(fish.GetSteeringBehaviours(), aiData)) * (Time.deltaTime * fish.fishInfo.fishSpeed);
 
-            
-            
-            //Clamp the y so the fish can't go above the water and can't go under terrain
-            var pos = position;
 
-            Physics.Raycast(_transform.position, _transform.TransformDirection(Vector3.down),out var hit ,Mathf.Infinity, 6);
-            
-            Debug.Log(hit);
-            
-            pos.y = Mathf.Clamp(position.y, hit.point.normalized.y, 0);
 
-            position = pos;
             _transform.position = position;
+
         }
 
 

@@ -390,7 +390,7 @@ Transform:
   - {fileID: 7738370525114923434}
   - {fileID: 7738370524461101623}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &7738370524306152082
 LODGroup:
@@ -594,7 +594,36 @@ SkinnedMeshRenderer:
   - {fileID: 6511752689179878273}
   - {fileID: 6511752689179878281}
   - {fileID: 6511752689179878277}
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   m_RootBone: {fileID: 6511752689179878299}
   m_AABB:
     m_Center: {x: 0.000043782056, y: 0.00086930045, z: 0.0038473308}
@@ -689,7 +718,36 @@ SkinnedMeshRenderer:
   - {fileID: 6511752689179878273}
   - {fileID: 6511752689179878281}
   - {fileID: 6511752689179878277}
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   m_RootBone: {fileID: 6511752689179878299}
   m_AABB:
     m_Center: {x: 0.000043782056, y: 0.00086930045, z: 0.0038473308}
@@ -784,7 +842,36 @@ SkinnedMeshRenderer:
   - {fileID: 6511752689179878273}
   - {fileID: 6511752689179878281}
   - {fileID: 6511752689179878277}
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   m_RootBone: {fileID: 6511752689179878299}
   m_AABB:
     m_Center: {x: 0.000043782056, y: 0.00086930045, z: 0.0038473308}
@@ -879,7 +966,36 @@ SkinnedMeshRenderer:
   - {fileID: 6511752689179878273}
   - {fileID: 6511752689179878281}
   - {fileID: 6511752689179878277}
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   m_RootBone: {fileID: 6511752689179878299}
   m_AABB:
     m_Center: {x: 0.000043782056, y: 0.00086930045, z: 0.0038473308}
